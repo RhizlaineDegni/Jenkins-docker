@@ -6,11 +6,11 @@ node {
     }
 
     stage("Build de l'app") {
-        app = docker.build("RhizlaineDegni/Jenkins-docker")
+        app = docker.build("rhizlaine/jenkins-docker")
     }
 
     stage('Test de mon application') {
-        docker.image('RhizlaineDegni/Jenkins-docker').withRun('--rm -p 80:80 --name devops') { c ->
+        docker.image('rhizlaine/jenkins-docker').withRun('--rm -p 80:80 --name devops') { c ->
         sh 'docker ps'
         sh 'docker exec devops curl localhost:80'
         sh 'echo "Tests passed"'
