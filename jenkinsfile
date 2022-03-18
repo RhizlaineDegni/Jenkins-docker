@@ -9,7 +9,7 @@ node {
         app = docker.build("rhizlaine/jenkins-docker")
     }
 
-    stage('Test de mon application') {
+    stage('Test de mon Application') {
         docker.image('rhizlaine/jenkins-docker').withRun('--rm -p 80:80 --name devops') { c ->
         sh 'docker ps'
         sh 'docker exec devops curl localhost:80'
