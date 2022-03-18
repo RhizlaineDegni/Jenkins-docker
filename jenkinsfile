@@ -6,7 +6,7 @@ node {
     }
 
     stage("Build de l'app") {
-        app = docker.build("RhizlaineDegni/Jenkins-docker")
+        app = docker.build("rhizlaine/jenkins-docker")
     }
 
     stage('Test de mon application') {
